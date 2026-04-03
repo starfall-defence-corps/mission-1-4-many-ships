@@ -1,0 +1,14 @@
+---
+# Variables shared across ALL fleet nodes (both OS families).
+#
+# These variables are used in templates to configure SSH
+# uniformly across the fleet, regardless of operating system.
+#
+# TODO: Define the following variables:
+#
+# ssh_permit_root_login: "no"
+# ssh_password_authentication: "no"
+# ssh_login_grace_time: 30
+# ssh_max_auth_tries: 3
+#
+# banner_message: "STARFALL DEFENCE CORPS — AUTHORISED PERSONNEL ONLY"

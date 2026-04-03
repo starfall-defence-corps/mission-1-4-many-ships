@@ -1,0 +1,12 @@
+---
+# Variables for Red Hat/Rocky Linux fleet nodes.
+#
+# Same variables as debian.yml, but with Red Hat family values.
+# The playbook uses these variables so it works on BOTH OS families
+# without separate tasks for each.
+#
+# TODO: Define the following variables:
+#
+# ssh_service_name: sshd
+# firewall_pkg: firewalld
+# firewall_service: firewalld

@@ -1,0 +1,25 @@
+# {{ ansible_managed }}
+# Starfall Defence Corps — SSH Hardening Configuration
+# Deployed by Ansible to {{ ansible_hostname }}
+
+# Authentication
+PermitRootLogin {{ ssh_permit_root_login }}
+PasswordAuthentication {{ ssh_password_authentication }}
+PubkeyAuthentication yes
+LoginGraceTime {{ ssh_login_grace_time }}
+MaxAuthTries {{ ssh_max_auth_tries }}
+
+# Protocol
+Protocol 2
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO
+
+# Other
+X11Forwarding no
+PrintMotd yes
+AcceptEnv LANG LC_*
+
+# Subsystem
+Subsystem sftp /usr/libexec/openssh/sftp-server

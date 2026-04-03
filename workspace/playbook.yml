@@ -1,0 +1,119 @@
+---
+# =============================================================
+# OPERATION: ONE PLAYBOOK, MANY SHIPS
+# =============================================================
+#
+# Corporal Copy-Paste wrote 47 separate playbooks — one per
+# node, one per OS. No more. One playbook. All ships.
+#
+# This playbook must work on BOTH Ubuntu and Rocky Linux nodes.
+# Use variables, templates, and conditionals — not hardcoded values.
+#
+# Run your playbook:  ansible-playbook playbook.yml
+# Dry run first:      ansible-playbook playbook.yml --check --diff
+# Verify your work:   make test  (from project root)
+# =============================================================
+
+- name: One Playbook, Many Ships — Multi-OS Fleet Hardening
+  hosts: all
+  become: true
+
+  tasks:
+    # ----------------------------------------------------------
+    # Task 1: Gather facts
+    # ----------------------------------------------------------
+    # Ansible gathers facts automatically, but being explicit
+    # makes the playbook clearer.
+    - name: Gather fleet intelligence
+      ansible.builtin.setup:
+
+    # ----------------------------------------------------------
+    # Task 2: Deploy SSH configuration from template
+    # ----------------------------------------------------------
+    # Use the template module to deploy sshd_config.j2.
+    # The template uses variables from group_vars/all.yml.
+    #
+    # Module: ansible.builtin.template
+    # Key parameters: src, dest, owner, group, mode, validate
+    # validate: 'sshd -t -f %s'
+    #
+    # The SSH service name differs by OS:
+    #   Ubuntu: ssh    Rocky: sshd
+    # Use the variable {{ ssh_service_name }} in your handler.
+    #
+    # TODO: Write this task
+    #       Add 'notify: Restart SSH' to trigger the handler
+
+    # ----------------------------------------------------------
+    # Task 3: Deploy login banner (MOTD)
+    # ----------------------------------------------------------
+    # Use the template module to deploy motd.j2 to /etc/motd.
+    # This template uses ansible_hostname, ansible_distribution,
+    # and the banner_message variable.
+    #
+    # TODO: Write this task
+
+    # ----------------------------------------------------------
+    # Task 4: Ensure firewall package is installed
+    # ----------------------------------------------------------
+    # The firewall package differs by OS:
+    #   Ubuntu: ufw    Rocky: firewalld
+    # Use the variable {{ firewall_pkg }}.
+    #
+    # But which module installs packages?
+    #   Ubuntu: apt    Rocky: dnf
+    #
+    # Use a 'when' conditional to run the right module:
+    #
+    #   - name: Install firewall (Debian)
+    #     ansible.builtin.apt:
+    #       name: "{{ firewall_pkg }}"
+    #       state: present
+    #     when: ansible_os_family == "Debian"
+    #
+    #   - name: Install firewall (RedHat)
+    #     ansible.builtin.dnf:
+    #       name: "{{ firewall_pkg }}"
+    #       state: present
+    #     when: ansible_os_family == "RedHat"
+    #
+    # TODO: Write both conditional tasks
+
+    # ----------------------------------------------------------
+    # Task 5: Configure firewall — allow SSH
+    # ----------------------------------------------------------
+    # Firewall configuration also differs by OS:
+    #
+    # Ubuntu (ufw):
+    #   community.general.ufw:
+    #     rule: allow
+    #     port: '22'
+    #     proto: tcp
+    #
+    # Rocky (firewalld):
+    #   ansible.posix.firewalld:
+    #     service: ssh
+    #     permanent: true
+    #     immediate: true
+    #     state: enabled
+    #
+    # TODO: Write both conditional tasks
+
+    # ----------------------------------------------------------
+    # Task 6: Enable firewall
+    # ----------------------------------------------------------
+    # Ubuntu: community.general.ufw with state: enabled
+    # Rocky: ansible.builtin.service to start firewalld
+    #
+    # TODO: Write both conditional tasks
+
+  handlers:
+    # ----------------------------------------------------------
+    # Handler: Restart SSH
+    # ----------------------------------------------------------
+    # Use the {{ ssh_service_name }} variable so the handler
+    # restarts the correct service on each OS.
+    #
+    # TODO: Write the handler using ansible.builtin.service
+    #       name: "{{ ssh_service_name }}"
+    #       state: restarted

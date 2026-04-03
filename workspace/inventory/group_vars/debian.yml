@@ -1,0 +1,12 @@
+---
+# Variables for Debian/Ubuntu fleet nodes.
+#
+# These variables capture the differences between Debian and
+# Red Hat family systems. Your playbook and templates use these
+# instead of hardcoding OS-specific values.
+#
+# TODO: Define the following variables:
+#
+# ssh_service_name: ssh
+# firewall_pkg: ufw
+# firewall_service: ufw
