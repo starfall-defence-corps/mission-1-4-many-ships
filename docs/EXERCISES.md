@@ -24,6 +24,14 @@ This builds both Ubuntu and Rocky Linux containers. Wait for all 3 nodes to repo
 
 **Note**: The Rocky Linux image is larger than Ubuntu and may take longer to build on first run.
 
+Then activate the Python environment:
+
+```bash
+source venv/bin/activate
+```
+
+Your terminal prompt will show `(venv)` when active. You need to do this once per terminal session.
+
 ---
 
 ## PHASE 1: Reconnaissance
