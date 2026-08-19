@@ -1,5 +1,7 @@
 # Starfall Defence Corps Academy
 
+> 🧭 [← 1.3 Clean Sweep](https://github.com/starfall-defence-corps/mission-1-3-clean-sweep) · **You are here: 1.4 Many Ships** · [1.5 Clean House →](https://github.com/starfall-defence-corps/mission-1-5-clean-house) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
+
 ## Mission 1.4: One Playbook, Many Ships
 
 > *"Fleet runs mixed OS — Ubuntu and Rocky. Corporal Copy-Paste has written 47 separate playbooks. No more. One playbook. All ships."*
