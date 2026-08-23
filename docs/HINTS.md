@@ -1,6 +1,6 @@
 # Mission 1.4: One Playbook, Many Ships — Hints & Troubleshooting Guide
 
-**Rank**: Ensign Candidate (Reduced Scaffolding)
+**Rank**: Sub-Lieutenant (Reduced Scaffolding)
 
 Fewer hints this time, Cadet. You've earned your way here.
 

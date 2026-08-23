@@ -1,6 +1,6 @@
 # Mission 1.4: One Playbook, Many Ships — Progress Tracker
 
-**Rank**: Ensign Candidate
+**Rank**: Sub-Lieutenant
 **Mission Progress**: 4 of 5 toward Ensign
 
 ---
