@@ -6,9 +6,9 @@
 
 ## Mission 1.4: One Playbook, Many Ships
 
-> *"Fleet runs mixed OS — Ubuntu and Rocky. Corporal Copy-Paste has written 47 separate playbooks. No more. One playbook. All ships."*
+> *"Fleet runs mixed OS — Ubuntu and Rocky. Marauder Copy-Paste has written 47 separate playbooks. No more. One playbook. All ships."*
 
-You are a cadet at the Starfall Defence Corps Academy. The fleet now runs mixed operating systems — Ubuntu and Rocky Linux. Previous missions only targeted Ubuntu. Corporal Copy-Paste's answer was to duplicate everything. Your answer: one playbook that adapts to any OS using variables, Jinja2 templates, and conditionals.
+You are a cadet at the Starfall Defence Corps Academy. The fleet now runs mixed operating systems — Ubuntu and Rocky Linux. Previous missions only targeted Ubuntu. Marauder Copy-Paste's answer was to duplicate everything. Your answer: one playbook that adapts to any OS using variables, Jinja2 templates, and conditionals.
 
 ## Prerequisites
 
