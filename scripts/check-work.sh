@@ -37,7 +37,7 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo -e "  ARIA: All objectives verified."
     echo -e "  Mission 1.4 status: COMPLETE"
     echo -e ""
-    echo -e "  Cadet, Corporal Copy-Paste has been defeated."
+    echo -e "  Cadet, Marauder Copy-Paste has been defeated."
     echo -e "  One playbook. All ships. Both OS families."
     echo -e "  The Starfall Defence Corps salutes your work."
     echo -e "  ==============================================${RESET}"

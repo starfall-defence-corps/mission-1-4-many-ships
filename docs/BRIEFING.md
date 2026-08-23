@@ -41,7 +41,7 @@ This mission introduces the tools that make one playbook serve many ships:
 
 Write a single Ansible playbook that hardens SSH, deploys a login banner, and configures the firewall on **both Ubuntu and Rocky Linux** nodes. Use variables, templates, and conditionals — not separate task blocks for each OS.
 
-**End state**: One playbook. All ships. Both OS families hardened identically (via different OS-appropriate mechanisms). Corporal Copy-Paste's 47-playbook approach replaced with one.
+**End state**: One playbook. All ships. Both OS families hardened identically (via different OS-appropriate mechanisms). Marauder Copy-Paste's 47-playbook approach replaced with one.
 
 ---
 
@@ -110,7 +110,7 @@ Your playbook must handle all of these differences using variables and condition
 
 ## 5. COMMAND AND SIGNAL
 
-**Commander's Final Order**: Corporal Copy-Paste's reign ends today. One playbook, all ships, both operating systems. Variables replace hardcoding. Templates replace static files. Conditionals replace duplication. Execute.
+**Commander's Final Order**: Marauder Copy-Paste's reign ends today. One playbook, all ships, both operating systems. Variables replace hardcoding. Templates replace static files. Conditionals replace duplication. Execute.
 
 Proceed to **EXERCISES.md** for phase-by-phase operational instructions.
 
