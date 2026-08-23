@@ -3,7 +3,7 @@
 # OPERATION: ONE PLAYBOOK, MANY SHIPS
 # =============================================================
 #
-# Corporal Copy-Paste wrote 47 separate playbooks — one per
+# Marauder Copy-Paste wrote 47 separate playbooks — one per
 # node, one per OS. No more. One playbook. All ships.
 #
 # This playbook must work on BOTH Ubuntu and Rocky Linux nodes.
