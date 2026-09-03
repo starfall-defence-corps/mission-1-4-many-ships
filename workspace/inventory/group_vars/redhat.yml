@@ -10,3 +10,4 @@
 # ssh_service_name: sshd
 # firewall_pkg: firewalld
 # firewall_service: firewalld
+# sftp_server_path: /usr/libexec/openssh/sftp-server

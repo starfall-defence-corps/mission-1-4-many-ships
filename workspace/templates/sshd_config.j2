@@ -22,4 +22,4 @@ PrintMotd yes
 AcceptEnv LANG LC_*
 
 # Subsystem
-Subsystem sftp /usr/libexec/openssh/sftp-server
+Subsystem sftp {{ sftp_server_path }}

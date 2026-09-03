@@ -124,6 +124,7 @@ Edit `inventory/group_vars/debian.yml`:
 ssh_service_name: ssh
 firewall_pkg: ufw
 firewall_service: ufw
+sftp_server_path: /usr/lib/openssh/sftp-server
 ```
 
 ### Step 2.3 — Define Red Hat-Specific Variables
@@ -135,7 +136,13 @@ Edit `inventory/group_vars/redhat.yml`:
 ssh_service_name: sshd
 firewall_pkg: firewalld
 firewall_service: firewalld
+sftp_server_path: /usr/libexec/openssh/sftp-server
 ```
+
+The SFTP subsystem binary also lives in a different place per OS
+family — Debian/Ubuntu ships it under `/usr/lib/openssh/`, Red Hat
+family under `/usr/libexec/openssh/`. `sftp_server_path` captures
+that difference the same way `ssh_service_name` does.
 
 ### Step 2.4 — Examine the SSH Template
 

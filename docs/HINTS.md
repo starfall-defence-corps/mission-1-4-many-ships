@@ -258,6 +258,7 @@ banner_message: "STARFALL DEFENCE CORPS — AUTHORISED PERSONNEL ONLY"
 ssh_service_name: ssh
 firewall_pkg: ufw
 firewall_service: ufw
+sftp_server_path: /usr/lib/openssh/sftp-server
 ```
 
 **group_vars/redhat.yml:**
@@ -266,6 +267,7 @@ firewall_service: ufw
 ssh_service_name: sshd
 firewall_pkg: firewalld
 firewall_service: firewalld
+sftp_server_path: /usr/libexec/openssh/sftp-server
 ```
 
 ---
