@@ -13,7 +13,7 @@ AUTHORITY: SDC Cyber Command, 2187
 
 ### 1a. Enemy Forces
 
-Voidborn operative **CORPORAL COPY-PASTE** has infiltrated fleet maintenance. Modus operandi: duplication without understanding. The Corporal has written 47 separate playbooks — one for every node, one for every OS variant. When a security patch was needed fleet-wide, only 12 of the 47 were updated. The rest are still vulnerable. Copy-paste is not automation — it is the illusion of automation.
+Voidborn operative **MARAUDER COPY-PASTE** has infiltrated fleet maintenance. Modus operandi: duplication without understanding. The Marauder has written 47 separate playbooks — one for every node, one for every OS variant. When a security patch was needed fleet-wide, only 12 of the 47 were updated. The rest are still vulnerable. Copy-paste is not automation — it is the illusion of automation.
 
 ### 1b. Friendly Forces
 
