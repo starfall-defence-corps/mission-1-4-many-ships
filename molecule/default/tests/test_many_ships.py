@@ -85,7 +85,7 @@ class TestPlaybookStructure:
         with open(path) as f:
             data = yaml.safe_load(f)
         assert data is not None, (
-            "ARIA: Playbook is empty. Corporal Copy-Paste had 47 "
+            "ARIA: Playbook is empty. Marauder Copy-Paste had 47 "
             "playbooks. You need at least one."
         )
 
@@ -113,7 +113,7 @@ class TestPlaybookStructure:
         )
         assert has_vars, (
             "ARIA: No variables or conditionals detected in playbook. "
-            "Corporal Copy-Paste would be proud — you're hardcoding. "
+            "Marauder Copy-Paste would be proud — you're hardcoding. "
             "Use variables from group_vars and 'when' conditionals."
         )
 
