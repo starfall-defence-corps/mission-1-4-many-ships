@@ -1,6 +1,6 @@
 # Mission 1.4: One Playbook, Many Ships — Progress Tracker
 
-**Rank**: Sub-Lieutenant
+**Rank**: Midshipman
 **Mission Progress**: 4 of 6 toward Sub-Lieutenant
 
 ---
