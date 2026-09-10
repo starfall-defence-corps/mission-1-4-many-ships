@@ -2,7 +2,7 @@
 
 > 📚 Deeper reference: [FM-2 — YAML & Jinja2 Quick Reference](https://github.com/starfall-defence-corps/sdc-academy/blob/main/field-manuals/FM-2-yaml-jinja2-reference.md)
 
-**Rank**: Sub-Lieutenant (Reduced Scaffolding)
+**Rank**: Midshipman (Reduced Scaffolding)
 
 Fewer hints this time, Cadet. You've earned your way here.
 
