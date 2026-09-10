@@ -60,3 +60,5 @@
 ## Verification
 
 - [ ] `make test` — all ARIA checks pass
+
+**Next stop**: [Mission 1.5 — Clean House](https://github.com/starfall-defence-corps/mission-1-5-clean-house)
