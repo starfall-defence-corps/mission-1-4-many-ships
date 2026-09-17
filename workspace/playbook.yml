@@ -9,8 +9,8 @@
 # This playbook must work on BOTH Ubuntu and Rocky Linux nodes.
 # Use variables, templates, and conditionals — not hardcoded values.
 #
-# Run your playbook:  ansible-playbook playbook.yml
-# Dry run first:      ansible-playbook playbook.yml --check --diff
+# Run your playbook:  ansible-playbook workspace/playbook.yml
+# Dry run first:      ansible-playbook workspace/playbook.yml --check --diff
 # Verify your work:   make test  (from project root)
 # =============================================================
 
