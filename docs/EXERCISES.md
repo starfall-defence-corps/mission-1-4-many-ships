@@ -6,11 +6,9 @@ DOCUMENT: EXERCISES — Phase-by-Phase Operational Instructions
 
 # EXERCISES — MISSION 1.4: ONE PLAYBOOK, MANY SHIPS
 
-Complete each phase in sequence. Run `make test` after each phase.
+Complete each phase in sequence. Run `make test` after each phase. Do not advance until ARIA confirms compliance.
 
-**Directory convention** (same as previous missions):
-- Ansible commands: run from `workspace/`
-- Make commands: run from the **project root**
+**One directory for everything**: run every command in this mission — `ansible ...` and `make ...` — from the **project root** (the folder with the `Makefile`). An `ansible.cfg` lives both there and in `workspace/`, so Ansible works from either; the steps below assume the project root throughout.
 
 ---
 
@@ -41,7 +39,6 @@ Your terminal prompt will show `(venv)` when active. You need to do this once pe
 ### Step 1.1 — Gather Facts from All Nodes
 
 ```bash
-cd workspace
 ansible all -m setup -a "filter=ansible_os_family"
 ```
 
@@ -89,9 +86,7 @@ ansible redhat -m shell -a "systemctl status sshd | head -3"
 ### Step 1.5 — Run ARIA
 
 ```bash
-cd ..
 make test
-cd workspace
 ```
 
 ---
@@ -102,7 +97,7 @@ cd workspace
 
 ### Step 2.1 — Define Shared Variables
 
-Edit `inventory/group_vars/all.yml`. Replace the TODO comments with actual variable definitions:
+Edit `workspace/inventory/group_vars/all.yml`. Replace the TODO comments with actual variable definitions:
 
 ```yaml
 ---
@@ -117,7 +112,7 @@ These values apply to ALL nodes regardless of OS.
 
 ### Step 2.2 — Define Debian-Specific Variables
 
-Edit `inventory/group_vars/debian.yml`:
+Edit `workspace/inventory/group_vars/debian.yml`:
 
 ```yaml
 ---
@@ -129,7 +124,7 @@ sftp_server_path: /usr/lib/openssh/sftp-server
 
 ### Step 2.3 — Define Red Hat-Specific Variables
 
-Edit `inventory/group_vars/redhat.yml`:
+Edit `workspace/inventory/group_vars/redhat.yml`:
 
 ```yaml
 ---
@@ -146,7 +141,7 @@ that difference the same way `ssh_service_name` does.
 
 ### Step 2.4 — Examine the SSH Template
 
-Open `templates/sshd_config.j2`. This template is provided — observe how it uses `{{ variable_name }}` syntax to insert values from your group_vars:
+Open `workspace/templates/sshd_config.j2`. This template is provided — observe how it uses `{{ variable_name }}` syntax to insert values from your group_vars:
 
 ```jinja2
 PermitRootLogin {{ ssh_permit_root_login }}
@@ -158,7 +153,7 @@ When Ansible deploys this template, it replaces each `{{ }}` with the actual var
 
 ### Step 2.5 — Examine the MOTD Template
 
-Open `templates/motd.j2`. This template uses **facts** — values Ansible gathers automatically:
+Open `workspace/templates/motd.j2`. This template uses **facts** — values Ansible gathers automatically:
 
 ```jinja2
 Hostname : {{ ansible_hostname }}
@@ -170,9 +165,7 @@ Each node gets a different banner because the facts differ per host.
 ### Step 2.6 — Run ARIA
 
 ```bash
-cd ..
 make test
-cd workspace
 ```
 
 ---
@@ -191,7 +184,7 @@ The `template` module works like `copy`, but processes Jinja2 syntax before depl
 
 ### Step 3.2 — Task 2: Deploy SSH Configuration
 
-Find the Task 2 TODO in `playbook.yml`. Write a task that:
+Find the Task 2 TODO in `workspace/playbook.yml`. Write a task that:
 
 1. Uses `ansible.builtin.template`
 2. Deploys `templates/sshd_config.j2` to `/etc/ssh/sshd_config`
@@ -266,10 +259,8 @@ On Ubuntu this restarts `ssh`. On Rocky this restarts `sshd`. Same handler, both
 ### Step 3.6 — Verify Syntax and Run ARIA
 
 ```bash
-ansible-playbook playbook.yml --syntax-check
-cd ..
+ansible-playbook workspace/playbook.yml --syntax-check
 make test
-cd workspace
 ```
 
 ---
@@ -328,10 +319,8 @@ cd workspace
 ### Step 4.3 — Verify and Run ARIA
 
 ```bash
-ansible-playbook playbook.yml --syntax-check
-cd ..
+ansible-playbook workspace/playbook.yml --syntax-check
 make test
-cd workspace
 ```
 
 ---
@@ -341,13 +330,13 @@ cd workspace
 ### Step 5.1 — Dry Run
 
 ```bash
-ansible-playbook playbook.yml --check --diff
+ansible-playbook workspace/playbook.yml --check --diff
 ```
 
 ### Step 5.2 — Execute
 
 ```bash
-ansible-playbook playbook.yml
+ansible-playbook workspace/playbook.yml
 ```
 
 Watch the output. Notice how `when` conditionals cause tasks to be **skipped** on non-matching OS families — this is correct behaviour.
@@ -374,7 +363,7 @@ ansible redhat -m shell -a "systemctl is-active firewalld"
 ### Step 5.4 — Idempotency
 
 ```bash
-ansible-playbook playbook.yml
+ansible-playbook workspace/playbook.yml
 ```
 
 `changed=0` on all hosts.
@@ -382,7 +371,6 @@ ansible-playbook playbook.yml
 ### Step 5.5 — Final ARIA Verification
 
 ```bash
-cd ..
 make test
 ```
 
